@@ -1,0 +1,52 @@
+<!--pages/release/release.wxml-->
+<form bindsubmit="formSubmit">
+  <view class="page-body">
+    <view class="page-section">
+      <view class="weui-cells__title">赛事名称</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <input type='text' class="weui-input" name="match" maxlength="10" placeholder="输入参加的赛事" />
+        </view>
+      </view>
+    </view>
+    <view class="page-section">
+      <view class="weui-cells__title">项目名称</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <input type='text' class="weui-input" name="project" maxlength="10" placeholder="输入要做的项目" />
+        </view>
+      </view>
+    </view>
+    <view class="page-section">
+      <view class="weui-cells__title">项目描述</view>
+      <view class="textarea-wrp">
+        <textarea style="height: 3em" name="desc" placeholder='请说明项目概况' />
+      </view>
+    </view>
+    <view class="page-section">
+      <view class="weui-cells__title">项目周期</view>
+      <picker bindchange="bindPickerChange" name="time" value="{{array[index]}}" range="{{array}}">
+        <view class="picker">
+          {{array[index]}}
+        </view>
+      </picker>
+    </view>
+    <view class="page-section">
+      <view class="weui-cells__title">招募对象</view>
+      <checkbox-group name="target" bindchange="checkboxChange">
+        <label class="checkbox" wx:for="{{items}}">
+          <checkbox value="{{item.value}}" checked="{{item.checked}}" />{{item.value}}
+        </label>
+      </checkbox-group>
+    </view>
+    <view class="page-section">
+      <view class="weui-cells__title">招募要求</view>
+      <view class="textarea-wrp">
+        <textarea style="height: 3em" name="condition" placeholder='请说明合伙人的条件' />
+      </view>
+    </view>
+  </view>
+  <view class="btn-area">
+    <button formType="submit" type='primary'>发布</button>
+  </view>
+</form>
