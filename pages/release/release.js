@@ -31,15 +31,17 @@ Page({
   },
 
   formSubmit: function (e) {
-    var formData = e.detail.value;
+    console.log('form发生了submit事件，携带数据为：', e.detail.value);
+    var myjson = JSON.stringify(e.detail.value);
     wx.request({
       url: 'http://123.206.79.199:80/release',
-      data: formData,
+      method: 'POST',
+      data: myjson,
       header: {
         'content-type': 'application/json'
       },
       success: function (res) {
-        console.log(res.data)
+        console.log(res.data);
       }
     })
   },

@@ -1,2 +1,38 @@
 <!--pages/card/card.wxml-->
-<text>pages/card/card.wxml</text>
+<form bindsubmit="formSubmit">
+  <view class='container'>
+    <view class="section">
+      <view class='title'>姓名</view>
+      <input type='text' name="name" class='content' />
+    </view>
+    <view class="section">
+      <view class='title'>性别</view>
+      <picker bindchange="genderChange" name="gender" value="{{genderArr[genderIndex]}}" range="{{genderArr}}">
+        <view class="content">
+          {{genderArr[genderIndex]}}
+        </view>
+      </picker>
+    </view>
+    <view class="section">
+      <view class='title'>学校</view>
+      <picker bindchange="schoolChange" name="school" value="{{schoolArr[schoolIndex]}}" range="{{schoolArr}}">
+        <view class="content">
+          {{schoolArr[schoolIndex]}}
+        </view>
+      </picker>
+    </view>
+    <view class="section">
+      <view class='title'>学号</view>
+      <input type='number' name="number" class='content' />
+    </view>
+    <view class="section">
+      <view class='title'>技能</view>
+    </view>
+    <checkbox-group name="skill" bindchange="checkboxChange">
+      <label class="checkbox" wx:for="{{items}}">
+        <checkbox value="{{item.value}}" checked="{{item.checked}}" />{{item.value}}
+      </label>
+    </checkbox-group>
+  </view>
+  <button formType="submit" type='primary'>保存</button>
+</form>
