@@ -1,0 +1,29 @@
+/* pages/release/release.wxss */
+@import "/lib/weui.wxss";
+
+textarea {
+  width: 700rpx;
+  padding: 20rpx 0;
+  font-size: 17px;
+}
+
+.textarea-wrp {
+  padding: 0 25rpx;
+  background-color: #fff;
+  border: 1px solid #d9d9d9;
+}
+
+.picker {
+  padding: 5px;
+  background-color: #fff;
+  border: 1px solid #d9d9d9;
+  font-size: 17px;
+}
+
+checkbox {
+  margin-left: 10px;
+}
+
+.checkbox {
+  font-size: 17px;
+}

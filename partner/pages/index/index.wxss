@@ -1,0 +1,12 @@
+/**index.wxss**/
+@import "/lib/weui.wxss";
+
+.weui-cells__title {
+  text-align: center;
+  font-weight: 700;
+  color: #5e2d50;
+}
+
+icon {
+  margin-right: 10px;
+}
